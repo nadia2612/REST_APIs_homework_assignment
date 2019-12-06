@@ -20,7 +20,7 @@ const requestLimit = () => {
 
 app.post("/messages", requestLimit(), (req, res, next) => {
   if (!req.body.text || req.body.text === "") {
-    res.status(400).json("Bad Request");
+    res.status(400).send("Bad Request");
   } else {
     console.log(req.body.text);
     res.json({
